@@ -2,12 +2,11 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-testUrl = 'http://futures.eastmoney.com/a/202105261936671058.html'
-
 
 class ContentGetter:
     def __init__(self, url):
         """
+        获取金融文本正文
 
         :param url: 爬取正文的url
         """
@@ -20,6 +19,7 @@ class ContentGetter:
     def getContent(self):
         """
         爬取金融文本正文内容
+
         :return:[news,newsAbstract]的数据结构
         """
         pageData = requests.get(url=self.url, headers=self.headers)
@@ -41,7 +41,3 @@ class ContentGetter:
         print(news)
 
         return [news, newsAbstract]
-
-# if __name__ == '__main__':
-#     test = ContentGetter(testUrl)
-#     test.getContent()

@@ -4,6 +4,9 @@ from DataBaseOperator.DBOperate import *
 
 class DBConnector(DBOperate):
     def __init__(self):
+        """
+        涵盖主要的数据库相关操作
+        """
         super().__init__()
         self.dataBase = 'finance_text'
 
@@ -13,6 +16,11 @@ class DBConnector(DBOperate):
         return db, cursor
 
     def writeTitle(self, data):
+        """
+        将文章分类、标题与url写入数据库
+
+        :param data: 传入[分类,标题,URL]的数据结构
+        """
         db, cursor = self.connect()
         sql = 'INSERT INTO title_url(Class,Title,URL) values(%s,%s,%s);'
         try:
@@ -26,6 +34,11 @@ class DBConnector(DBOperate):
             print('数据写入不成功，数据库已回滚')
 
     def writeContent(self, data):
+        """
+        将标题索引、正文内容与摘要内容写入数据库
+
+        :param data: 传入[标题索引,正文内容,摘要内容]的数据结构
+        """
         db, cursor = self.connect()
         sql = 'INSERT INTO text_content(Title_index,Content,Abstract) values (%s,%s,%s);'
         try:
@@ -54,6 +67,7 @@ class DBConnector(DBOperate):
 
     def selectUrl(self, id):
         """
+        选取正文内容的url
 
         :param id:
         :return:((URL,),)的数据结构

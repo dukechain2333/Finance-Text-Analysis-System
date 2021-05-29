@@ -1,11 +1,11 @@
 import requests
-import re
 from bs4 import BeautifulSoup
 
 
 class TitleGetter:
     def __init__(self, blockChoice):
         """
+        获取金融文本标题与指向的文本URL
 
         :param blockChoice:选择板块
         """
@@ -27,6 +27,7 @@ class TitleGetter:
     def getTitleUrl(self):
         """
         获取金融文本的链接和标题
+
         :return:返回[[blockChoice,title,url]]的数据结构
         """
         data = []

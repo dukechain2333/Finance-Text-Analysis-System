@@ -3,8 +3,14 @@ import pymysql
 
 class DBOperate:
     def __init__(self):
+        """
+        所有数据库操作的父类
+        """
+        # 设置主机名
         self.host = 'localhost'
+        # 设置用户
         self.user = 'root'
+        # 设置密码
         self.passwd = 'qian258046'
 
     def connect(self):

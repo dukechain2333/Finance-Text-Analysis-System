@@ -4,6 +4,9 @@ from DataBaseOperator.DBOperate import DBOperate
 
 class DBCreator(DBOperate):
     def __init__(self):
+        """
+        创建数据库
+        """
         super().__init__()
 
     def connect(self):
@@ -12,6 +15,9 @@ class DBCreator(DBOperate):
         return db, cursor
 
     def createDB(self):
+        """
+        创建数据库
+        """
         db, cursor = self.connect()
         sql = 'CREATE DATABASE IF NOT EXISTS finance_text;'
         cursor.execute(sql)
@@ -19,6 +25,9 @@ class DBCreator(DBOperate):
         cursor.close()
 
     def createTitleTable(self):
+        """
+        建立文本标题数据表
+        """
         db, cursor = self.connect()
         cursor.execute('USE finance_text;')
         sql = '''
@@ -34,6 +43,9 @@ class DBCreator(DBOperate):
         cursor.close()
 
     def createContentTable(self):
+        """
+        建立文本正文数据表
+        """
         db, cursor = self.connect()
         cursor.execute('USE finance_text;')
         sql = '''
@@ -54,8 +66,3 @@ class DBCreator(DBOperate):
         self.createTitleTable()
         self.createContentTable()
         print('数据库建立完成')
-
-
-if __name__ == '__main__':
-    creator = DBCreator()
-    creator.create()
