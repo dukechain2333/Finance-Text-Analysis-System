@@ -116,6 +116,6 @@ class EmotionCounter:
         print(fourthRow)
 
 
-if __name__ == '__main__':
-    test = EmotionCounter()
-    test.generalize_emotion_report()
+# if __name__ == '__main__':
+#     test = EmotionCounter()
+#     test.generalize_emotion_report()
