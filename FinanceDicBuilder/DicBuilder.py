@@ -12,7 +12,7 @@ class DicBuilder:
         self.id = id
         self.stopWords_path = r'../EmotionBasedDic/stopwords.txt'
         self.negativeWords_path = r'../EmotionBasedDic/TsingHua/tsinghua.negative.gb.txt'
-        self.postiveWords_path = r'../EmotionBasedDic/TsingHua/tsinghua.positive.gb.txt'
+        self.positiveWords_path = r'../EmotionBasedDic/TsingHua/tsinghua.positive.gb.txt'
         self.financeDic_path = r'../EmotionBasedDic/FinanceWordDic.txt'
 
     def loadContent(self):
@@ -69,7 +69,7 @@ class DicBuilder:
         for i in range(len(negativeWords)):
             negativeWords[i] = negativeWords[i].strip()
 
-        with open(self.postiveWords_path, encoding='gbk') as file:
+        with open(self.positiveWords_path, encoding='gbk') as file:
             positiveWords = file.readlines()
         for i in range(len(positiveWords)):
             positiveWords[i] = positiveWords[i].strip()
