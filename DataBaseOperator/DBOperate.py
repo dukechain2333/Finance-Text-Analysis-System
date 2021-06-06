@@ -12,7 +12,7 @@ class DBOperate:
         # 设置用户
         self.user = 'root'
         # 设置密码
-        self.passwd = 'qian258046'
+        self.passwd = ''
 
     def connect(self):
         db = pymysql.connect(host=self.host, user=self.user, password=self.passwd)
