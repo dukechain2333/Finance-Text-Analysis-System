@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from pyhanlp import *
 from DataBaseOperator import DBConnector
 

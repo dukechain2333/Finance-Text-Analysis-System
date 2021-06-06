@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import pymysql
 from DataBaseOperator.DBOperate import *
 
@@ -94,6 +95,28 @@ class DBConnector(DBOperate):
             cursor.execute(sql)
         else:
             sql = 'SELECT `Content` FROM text_content WHERE `Index` = %s;'
+            cursor.execute(sql, id)
+
+        data = cursor.fetchall()
+        cursor.close()
+        db.close()
+
+        return data
+
+    def selectTitle(self, id=-1):
+        """
+        查找金融文本标题
+
+        :param id:待查询标题的Index
+        :return:((Title,),)的数据结构
+        """
+        db, cursor = self.connect()
+        if id == -1:
+            sql = 'SELECT `Title` FROM title_url;'
+            cursor.execute(sql)
+        else:
+            sql = 'SELECT `Title` FROM title_url WHERE `Index` = ' \
+                  '(SELECT `Title_Index` FROM text_content WHERE `Index` = %s);'
             cursor.execute(sql, id)
 
         data = cursor.fetchall()

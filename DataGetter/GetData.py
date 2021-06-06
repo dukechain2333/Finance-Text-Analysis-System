@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from DataBaseOperator import DataBaseCreator, DBConnector
 from DataGetter import ContentGetter, TitleGetter
 
