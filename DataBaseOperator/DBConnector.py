@@ -73,8 +73,29 @@ class DBConnector(DBOperate):
         :return:((URL,),)的数据结构
         """
         db, cursor = self.connect()
-        sql = 'SELECT `URL` FROM title_url WHERE `Index` = %s'
+        sql = 'SELECT `URL` FROM title_url WHERE `Index` = %s;'
         cursor.execute(sql, id)
+        data = cursor.fetchall()
+        cursor.close()
+        db.close()
+
+        return data
+
+    def selectContent(self, id=-1):
+        """
+        查找金融文本正文
+
+        :param id:待查询正文的Index
+        :return:((Content,),)的数据结构
+        """
+        db, cursor = self.connect()
+        if id == -1:
+            sql = 'SELECT `Content` FROM text_content;'
+            cursor.execute(sql)
+        else:
+            sql = 'SELECT `Content` FROM text_content WHERE `Index` = %s;'
+            cursor.execute(sql, id)
+
         data = cursor.fetchall()
         cursor.close()
         db.close()
