@@ -8,9 +8,9 @@ class EmotionCounter:
     def __init__(self):
         # 随机挑一篇文章
         self.id = np.random.randint(1, 1001)
-        self.negativeWords_path = r'../EmotionBasedDic/TsingHua/tsinghua.negative.gb.txt'
-        self.positiveWords_path = r'../EmotionBasedDic/TsingHua/tsinghua.positive.gb.txt'
-        self.report_path = r'../EmotionAnalysis/EmotionReport.txt'
+        self.negativeWords_path = r'EmotionBasedDic/TsingHua/tsinghua.negative.gb.txt'
+        self.positiveWords_path = r'EmotionBasedDic/TsingHua/tsinghua.positive.gb.txt'
+        self.report_path = r'EmotionAnalysis/EmotionReport.txt'
 
     def loadContent(self):
         """
@@ -114,7 +114,6 @@ class EmotionCounter:
         print(secondRow)
         print(thirdRow)
         print(fourthRow)
-
 
 # if __name__ == '__main__':
 #     test = EmotionCounter()

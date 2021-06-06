@@ -43,6 +43,7 @@ class TitleGetter:
                 href = content.a['href']
                 # print(content.a['href'])
                 title = content.a.text.strip()
+                print(title)
                 # print(content.a.text.strip())
                 data.append([self.blockChoice, title, href])
 

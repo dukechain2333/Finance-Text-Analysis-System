@@ -1,0 +1,13 @@
+beautifulsoup4==4.9.3
+certifi==2021.5.30
+chardet==4.0.0
+hanlp-downloader==0.0.21
+idna==2.10
+JPype1==0.7.0
+numpy==1.20.3
+pyhanlp==0.1.79
+PyMySQL==1.0.2
+requests==2.25.1
+soupsieve==2.2.1
+urllib3==1.26.5
+wincertstore==0.2

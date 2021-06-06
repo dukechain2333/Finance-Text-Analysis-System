@@ -6,9 +6,14 @@ import numpy as np
 
 class TextExtract:
     def __init__(self, num):
+        """
+        抽取文本摘要
+
+        :param num:文章迭代次数
+        """
         self.num = num
         self.id = np.random.randint(1, 1001)
-        self.extract_path = '../TextExtract/FinanceTextExtraction_' + str(self.num) + '.txt'
+        self.extract_path = 'TextExtract/FinanceTextExtraction_' + str(self.num) + '.txt'
 
     def loadContent(self):
         """
@@ -93,14 +98,19 @@ class TextExtract:
                 file.write(fifthRow + '\n')
 
             print('完成第' + str(self.num) + '份摘要！')
+            print(firstRow)
+            print(secondRow)
+            print(thirdRow)
+            print(fourthRow)
+            print(fifthRow)
 
             return self.num + 1
         else:
             return self.num
 
 
-if __name__ == '__main__':
-    times = 1
-    while times <= 10:
-        textExtract = TextExtract(times)
-        times = textExtract.generate_report()
+# if __name__ == '__main__':
+#     times = 1
+#     while times <= 10:
+#         textExtract = TextExtract(times)
+#         times = textExtract.generate_report()

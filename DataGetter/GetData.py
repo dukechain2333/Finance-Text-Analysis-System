@@ -35,6 +35,6 @@ class GetData:
         print("Content Get!")
 
 
-if __name__ == '__main__':
-    test = GetData()
-    test.getData()
+# if __name__ == '__main__':
+#     test = GetData()
+#     test.getData()

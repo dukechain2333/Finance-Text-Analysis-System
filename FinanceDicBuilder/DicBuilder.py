@@ -11,10 +11,10 @@ class DicBuilder:
         :param id: 从数据库中通过index选择文本，默认-1即全选
         """
         self.id = id
-        self.stopWords_path = r'../EmotionBasedDic/stopwords.txt'
-        self.negativeWords_path = r'../EmotionBasedDic/TsingHua/tsinghua.negative.gb.txt'
-        self.positiveWords_path = r'../EmotionBasedDic/TsingHua/tsinghua.positive.gb.txt'
-        self.financeDic_path = r'../EmotionBasedDic/FinanceWordDic.txt'
+        self.stopWords_path = r'EmotionBasedDic/stopwords.txt'
+        self.negativeWords_path = r'EmotionBasedDic/TsingHua/tsinghua.negative.gb.txt'
+        self.positiveWords_path = r'EmotionBasedDic/TsingHua/tsinghua.positive.gb.txt'
+        self.financeDic_path = r'EmotionBasedDic/FinanceWordDic.txt'
 
     def loadContent(self):
         """
