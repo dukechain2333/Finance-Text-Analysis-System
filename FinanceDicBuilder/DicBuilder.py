@@ -126,7 +126,7 @@ class DicBuilder:
 
         :param data: 去除垃圾词后的词汇列表
         """
-        with open(self.financeDic_path, 'w') as file:
+        with open(self.financeDic_path, 'w', encoding='utf8') as file:
             for i in data:
                 file.write(i + '\n')
 
